@@ -15,7 +15,7 @@ def create_team():
     form=TeamForm()
     if form.validate_on_submit():
         new_team = Teams(
-            team_name = form.form_teamname.data, 
+            team_name = form.form_team_name.data, 
             city = form.form_city.data
             )
         db.session.add(new_team)  
