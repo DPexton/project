@@ -2,10 +2,15 @@
 {% block body %}
 
 {% for team in all_teams %}
-
+        <br>
+        {{ team.id }}
         {{ team.team_name }}
         {{ team.city }}
         {{ team.date_formed }}
+        <form action="{{ url_for("create_player", id=teams.id) }}"
+                <input type=submit value="create_player">
+        </form>
+        <br>
 
 {% endfor %}
 

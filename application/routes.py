@@ -2,7 +2,7 @@ from os import removedirs
 from application import app, db
 from application.models import Teams, Players
 from application.forms import TeamForm, PlayerForm
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, url_for
 
 @app.route("/", methods=['GET', 'POST'])
 @app.route("/home", methods=['GET', 'POST'])
@@ -28,17 +28,19 @@ def create_team():
 @app.route("/create_player/<int:id>", methods=['GET', 'POST'])
 def create_player(id): 
     form=PlayerForm
-    if form.validate_on_submit():
-        new_player = Players(
+    team = Teams.query.filter_by(id=id).first()
+    if request.method == "POST":
+        if form.validate_on_submit():
+            new_player = Players(
             player_name = form.form_playername.data, 
             skill = form.form_playerskill.data,
             position = form.form_position.data,
             team_id = id
             )
-        db.session.add(new_player)  
-        db.session.commit() 
-    return f"{new_player.player_name} successfully added!"
-    
+            db.session.add(new_player)  
+            db.session.commit() 
+            return redirect(url_for("home"))
+    return render_template("create_player.html", title = "Create a player", form=form) 
 
 app.route("/deleteteam/<int:id>")
 def delete(id):

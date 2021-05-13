@@ -1,15 +1,17 @@
 {% extends 'layout.html' %}
 {% block body %}
 <br>
-{{ form.player_name.label }} {{ form.player_name }}
-<br>
-{{form.playerskill.label }} {{ form.playerskill}}
-<br>
-{{ form.position.label }} {{ form.position }}
-<br>
-{{ form.submit }}
-<br>
-
+<form action='' method='POST'>
+    {{ form.hidden_tag() }}
+    {{ form.player_name.label }} {{ form.player_name }}
+    <br>
+    {{form.playerskill.label }} {{ form.playerskill}}
+    <br>
+    {{ form.position.label }} {{ form.position }}
+    <br>
+    {{ form.submit }}
+    <br>
+</form>
 
 <a href="{{ url_for('layout') }}">layout</a>
 {% endblock body %}
