@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired, NumberRange
 class TeamForm(FlaskForm):
     form_team_name = StringField("Please enter the name of your Team", validators=[DataRequired()])
     form_city = StringField("Please enter the City your team is from", validators=[DataRequired()]) 
-    submit = SubmitField('create team')
+    submit = SubmitField('new_team')
 
 class PlayerForm(FlaskForm):
     form_player_name = StringField("Please Enter the full name of your player", validators=[DataRequired()])
