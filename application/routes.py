@@ -3,8 +3,8 @@ from application.models import Teams, Players
 from application.forms import TeamForm, PlayerForm
 from flask import render_template
 
-@app.route("/")
-@app.route("/home")
+@app.route("/", methods=['GET', 'POST'])
+@app.route("/home", methods=['GET', 'POST'])
 def home():
     all_teams = Teams.query.all()
     all_players = Players.query.all()
@@ -37,3 +37,19 @@ def create_player(id):
         db.session.commit() 
         return f"{new_player.player_name} successfully added!"
     
+
+app.route("/deleteteam/<int:id>")
+def delete(id):
+    player = Teams.query.filter_by(id=id).first()
+    db.session.delete(player)
+    db.session.commit()
+    return redirect(url_for("home"))
+    
+    
+    
+@app.route("/deleteplayer/<int:id>")
+def deletesequence(id):
+    task = Players.query.filter_by(id=id).first()
+    db.session.delete(task)
+    db.session.commit()
+    return redirect(url_for("home"))
