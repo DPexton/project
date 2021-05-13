@@ -20,8 +20,7 @@ def create_team():
             )
         db.session.add(new_team)  
         db.session.commit() 
-        return f"{new_team.team_name} successfully created!"
-    return render_template("create_team.html", title = "Create a Team", form=form) 
+        return render_template("create_team.html", title = "Create a Team", form=form) 
 
 @app.route("/create_player/<int:id>", methods=['GET', 'POST'])
 def create_player(id): 
