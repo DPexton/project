@@ -6,9 +6,6 @@
         <h1>Team Manager - {{ title }}</h1>
         <a href="{{ url_for('home') }}">Home</a>
         <a href="{{ url_for('create_team') }}">Add Team</a>
-        <a href="{{ url_for('create_player') }}">Add Player</a>
-        <a href="{{ url_for('update_team') }}">Update Team</a>
-        <a href="{{ url_for('update_player') }}">Update Player</a>
         {% block body %}
         {% endblock body%}
     </body>

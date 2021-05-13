@@ -6,7 +6,7 @@ class Teams(db.Model):
     team_name = db.Column(db.String(30), nullable=False)
     overall_skill = db.Column(db.Integer, nullable=False)
     date_formed = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    players = db.relationship('Team', backref='player')
+    players = db.relationship('Players', backref='team')
 
 class Players(db.Model):
     id = db.Column(db.Integer, primary_key=True)

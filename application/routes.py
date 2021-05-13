@@ -23,19 +23,17 @@ def create_team():
         return f"{new_team.team_name} successfully created!"
     return render_template("create_team.html", title = "Create a Team", form=form) 
 
-@app.route("/create_player", methods=['GET', 'POST'])
-def create_player(): 
+@app.route("/create_player/<int:id>", methods=['GET', 'POST'])
+def create_player(id): 
     form=PlayerForm
     if form.validate_on_submit():
         new_player = Players(
             player_name = form.form_playername.data, 
             skill = form.form_playerskill.data,
-            position = form.form_position.data
+            position = form.form_position.data,
+            team_id = id
             )
         db.session.add(new_player)  
         db.session.commit() 
         return f"{new_player.player_name} successfully added!"
     
-@app.route("/update_player/<int:id>")
-def update(player_id):
-    player = Player.query.filter(id = player_id).first()
