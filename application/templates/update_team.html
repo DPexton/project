@@ -1,12 +1,14 @@
 {% block body %}
 <br>
-{{ form.team_name.label }} {{ form.team_name }}
-<br>
-{{form.city.lable }} {{ form.city}}
-<br>
-{{ form.submit }}
-<br>
+<form action='' method='POST'>
+    {{ form.hidden_tag() }}
+    {{ form.form_team_name.label }} {{ form.form_team_name }}
+    <br>
+    {{form.form_city.label }} {{ form.form_city}}
+    <br>
+    {{ form.submit }}
+    <br>
+</form>
 
 
-<a href="{{ url_for('layout') }}">layout</a>
 {% endblock body %}

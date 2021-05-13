@@ -3,15 +3,15 @@
 <br>
 <form action='' method='POST'>
     {{ form.hidden_tag() }}
-    {{ form.player_name.label }} {{ form.player_name }}
+    {{ form.form_player_name.label }} {{ form.form_player_name }}
     <br>
-    {{form.playerskill.label }} {{ form.playerskill}}
+    {{form.form_playerskill.label }} {{ form.form_playerskill}}
     <br>
-    {{ form.position.label }} {{ form.position }}
+    {{ form.form_position.label }} {{ form.form_position }}
     <br>
     {{ form.submit }}
     <br>
 </form>
 
-<a href="{{ url_for('layout') }}">layout</a>
+
 {% endblock body %}

@@ -28,18 +28,3 @@ class UpdateTeam(FlaskForm):
     form_city = StringField("Please enter the City your team is from", validators=[DataRequired()]) 
     submit = SubmitField('Update Team')
 
-class UpdatePlayer(FlaskForm):
-    form_player_name = StringField("Please Enter the full name of your player", validators=[DataRequired()])
-    form_playerskill = IntegerField("Please Enter the skill level of your player between 1 and 100", validators=[NumberRange(min=1, max=100, message="enter a number between 1 & 100")] )
-    form_position = SelectField("Please select your players position", choices=[
-        ("GK", "Goalkeeper"),
-        ("RB", "Right Back"),
-        ("LB", "Left Back"),
-        ("CB", "Center Back"),
-        ("RW", "Right Wing"),
-        ("LW", "Left Wing"),
-        ("CM", "Central Midfield"),
-        ("CAM", "Centre Attack Midfield"),
-        ("ST", "Striker")
-        ])
-    submit = SubmitField('Update Player')

@@ -3,15 +3,31 @@
 
 {% for team in all_teams %}
         <br>
+       
+       
         {{ team.id }}
         {{ team.team_name }}
         {{ team.city }}
         {{ team.date_formed }}
-        <form action="{{ url_for("create_player", id=teams.id) }}"
-                <input type=submit value="create_player">
+        <br>
+        {% for player in team.players %}
+                {{ player.id }}
+                {{ player.player_name }}
+                {{ player.position }}
+                {{ player.skill }}
+                <br>
+        {% endfor %}
+        <form action="{{ url_for('create_player', id=team.id) }}">
+                <input type=submit value="Create Player">
+        </form>
+        <form action="{{ url_for('update_team', id=team.id) }}">
+                <input type=submit value="Update Team">
+        </form>
+        <form action="{{ url_for('delete', id=team.id) }}">
+                <input type=submit value="Delete Team">
         </form>
         <br>
-
+        
 {% endfor %}
 
 
