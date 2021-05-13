@@ -1,0 +1,12 @@
+{% block body %}
+
+{{ form.team_name.label }} {{ form.team_name }}
+
+{{form.city.lable }} {{ form.city}}
+
+{{ form.submit }}
+
+
+
+<a href="{{ url_for('layout') }}">layout</a>
+{% endblock body %}
