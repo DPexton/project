@@ -1,7 +1,8 @@
+from os import removedirs
 from application import app, db
 from application.models import Teams, Players
 from application.forms import TeamForm, PlayerForm
-from flask import render_template
+from flask import render_template, request, redirect
 
 @app.route("/", methods=['GET', 'POST'])
 @app.route("/home", methods=['GET', 'POST'])
@@ -13,14 +14,16 @@ def home():
 @app.route("/create_team", methods=['GET', 'POST'])
 def create_team():
     form=TeamForm()
-    if form.validate_on_submit():
-        new_team = Teams(
+    if request.method == "POST":
+        if form.validate_on_submit():
+            new_team = Teams(
             team_name = form.form_team_name.data, 
             city = form.form_city.data
             )
-        db.session.add(new_team)  
-        db.session.commit() 
-        return render_template("create_team.html", title = "Create a Team", form=form) 
+            db.session.add(new_team)  
+            db.session.commit() 
+            return redirect(url_for("home"))
+    return render_template("create_team.html", title = "Create a Team", form=form) 
 
 @app.route("/create_player/<int:id>", methods=['GET', 'POST'])
 def create_player(id): 
@@ -34,7 +37,7 @@ def create_player(id):
             )
         db.session.add(new_player)  
         db.session.commit() 
-        return f"{new_player.player_name} successfully added!"
+    return f"{new_player.player_name} successfully added!"
     
 
 app.route("/deleteteam/<int:id>")

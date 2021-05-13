@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired, NumberRange
 class TeamForm(FlaskForm):
     form_team_name = StringField("Please enter the name of your Team", validators=[DataRequired()])
     form_city = StringField("Please enter the City your team is from", validators=[DataRequired()]) 
-    submit = SubmitField('new_team')
+    submit = SubmitField('New Team')
 
 class PlayerForm(FlaskForm):
     form_player_name = StringField("Please Enter the full name of your player", validators=[DataRequired()])
@@ -21,12 +21,12 @@ class PlayerForm(FlaskForm):
         ("CAM", "Centre Attack Midfield"),
         ("ST", "Striker")
         ])
-    submit = SubmitField('create player')
+    submit = SubmitField('Create Player')
 
 class UpdateTeam(FlaskForm):
     form_team_name = StringField("Please enter the new name of your Team", validators=[DataRequired()])
     form_city = StringField("Please enter the City your team is from", validators=[DataRequired()]) 
-    submit = SubmitField('create team')
+    submit = SubmitField('Update Team')
 
 class UpdatePlayer(FlaskForm):
     form_player_name = StringField("Please Enter the full name of your player", validators=[DataRequired()])
@@ -42,4 +42,4 @@ class UpdatePlayer(FlaskForm):
         ("CAM", "Centre Attack Midfield"),
         ("ST", "Striker")
         ])
-    submit = SubmitField('create player')
+    submit = SubmitField('Update Player')
