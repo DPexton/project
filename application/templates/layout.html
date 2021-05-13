@@ -4,8 +4,11 @@
     </head>
     <body>
         <h1>Team Manager - {{ title }}</h1>
+        <br>
         <a href="{{ url_for('home') }}">Home</a>
+        <br>
         <a href="{{ url_for('create_team') }}">Add Team</a>
+        <br>
         {% block body %}
         {% endblock body%}
     </body>

@@ -1,11 +1,14 @@
 {% extends 'layout.html' %}
 {% block body %}
-
-{{ form.form_team_name.label }} {{ form.form_team_name }}
-
-{{form.form_city.label }} {{ form.form_city}}
-
-{{ form.submit }}
+    <br>
+<form action='' method='POST'>
+    {{ form.hidden_tag() }}
+    {{ form.form_team_name.label }} {{ form.form_team_name }}
+    <br>
+    {{form.form_city.label }} {{ form.form_city}}
+    <br>
+    {{ form.submit }}
+</form>
 
 
 
