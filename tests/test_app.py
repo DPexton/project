@@ -11,23 +11,26 @@ class TestBase(TestCase):
 
     def create_app(self):
         app.config.update(
-            [SQLALCHEMY_DATABASE_URI]=getenv("DATABASE_URI")
-            [SECRET_KEY]=getenv("SECRET_KEY")
-            DEBUG=True"
+            SQLALCHEMY_DATABASE_URI= "sqlite:///test.db",
+            SECRET_KEY=getenv("SECRET_KEY"),
+            DEBUG=True,
+            WTF_CSRF_ENABLED=False
         )
         return app
    
-    def setup(self):
+    def setUp(self):
         db.create_all()
         test_team = Teams(team_name = "Celtic FC",
-            test_city = "Glasgow"
+            city = "Glasgow"
             )
         test_player = Players(player_name = "Kristofer Ajer", 
             skill = "73", 
-            position = "LB"
+            position = "LB",
+            team_id = 1
             )
         db.session.add(test_team)
-        db.session.commit(test_player)
+        db.session.add(test_player)
+        db.session.commit()
 
     def tearDown(self):
         db.session.remove()
@@ -51,13 +54,14 @@ class TestViews(TestBase):
         self.assertEqual(response.status_code,200)
     
     def test_delete_get(self):
-        response = self.client.get(url_for('delete', id=1))
+        response = self.client.get(url_for('delete', id=1), follow_redirects=True)
         self.assertEqual(response.status_code, 200)
+        
 
 class TestRead(TestBase):
     def test_read_teams(self):
         response = self.client.get(url_for('home'))
-        self.assertIn(b"Celtic Fc",response.data)
+        self.assertIn(b"Celtic FC",response.data)
         self.assertIn(b"Glasgow",response.data)
 
 class TestCreate(TestBase):
@@ -65,7 +69,7 @@ class TestCreate(TestBase):
         response = self.client.post(url_for(
             "create_team"),
             data=dict(form_team_name="Arsenal FC",
-            form_city = "London")
+            form_city = "London"),
             follow_redirects=True
             )
         self.assertIn(b"Arsenal FC", response.data)
@@ -76,7 +80,7 @@ class TestCreate(TestBase):
             "create_player", id=1),
             data=dict(form_player_name ="Kieran Tierney",
             form_playerskill = "81",
-            form_position = "LW")
+            form_position = "LW"),
             follow_redirects=True
             )
         self.assertIn(b"Kieran Tierney", response.data)
@@ -86,9 +90,9 @@ class TestCreate(TestBase):
 class TestUpdate(TestBase):
     def test_update_team(self):
         response = self.client.post(url_for(
-            "update_team" id=1),
+            "update_team", id=1),
             data=dict(form_team_name="Manchester Utd",
-            form_city = "Manchester")
+            form_city = "Manchester"),
             follow_redirects=True
             )
         self.assertIn(b"Manchester Utd", response.data)
@@ -101,5 +105,5 @@ class TestDelete(TestBase):
             follow_redirects=True
         )
         self.assertNotIn(b"Celtic FC", response.data)
-        self.assertNotIn(b"Glasgow")
+        self.assertNotIn(b"Glasgow", response.data)
 
