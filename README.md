@@ -1,1 +1,80 @@
-# project
+# README - Project 
+
+## Contents
+
+## Brief
+
+## Introduction
+
+### The Brief
+
+The Objective of this project was:
+
+* To create a CRUD application with utilisation of supporting tools,
+methodologies and technologies that encapsulate all core modules
+covered during training.
+
+This application must include the Create, Read, Update and Delete functions to show my progress over the past month. Along with this there were several documentary requirements, such as:
+
+* An Entity Relationship Diagram
+* A Trello/Kanban board
+* Risk Assessment
+* CI (Continuous Integration) documentation
+* A working website built using Flask and HTML
+
+My project was also built as per the brief. Using a GitHub repository as a VCS and working through a virtual machine.
+
+### My Objective
+
+I chose to make a program that would allow football enthusiasts to create view a table of football teams. This would allow them to create the teams, players and update attributes of the individual teams.
+
+CRUD Implementations:
+
+* Create:   
+  * Individual Football Teams including details of the teams home city and date of creation.
+  * Players which can be assigned to a specific team. Including details of position and skill level.
+* Read:
+  * All Teams and Players created
+* Update:
+  * The name and home city of a given team.
+* Delete:
+  * Specific teams and the players assigned to said team.
+
+I also looked into some other features for the application. This included the ability to update and delete specific players and also a match system using an overall skill attribute for each team to allow for teams to be compared and a winner to be selected. Due to time constraints, these are not included in the current build.
+## Architecture
+
+### Risk Assessment
+
+My Risk assessment is shown below:
+
+![](https://imgur.com/U8lSauw)
+
+The highlighted row represents a risk that only crossed my path after facing my own technical issues and thus required updating the risk assessment.
+
+Here is also a link to my [Risk Assessment](#https://qalearning-my.sharepoint.com/:i:/r/personal/dpexton_qa_com/Documents/Risk%20Assessment.png?csf=1&web=1&e=dxQejr_).
+
+### Trello Board
+
+I used the site Trello as a Project Tracking tool.    
+I used this as it is a familiar and easy to use application which makes for clear visibility of project goals and aesthetically fits very well into a presentation.
+
+![](https://i.imgur.com/NbUXol2.png)
+
+Here is a link to the [Full Board](https://qalearning-my.sharepoint.com/:i:/r/personal/dpexton_qa_com/Documents/Project%20Tracking.png?csf=1&web=1&e=gU2AEA)
+
+### Entity Relationship Diagram
+
+![](https://imgur.com/4BmcEpA)
+
+As you can see for the diagram we have two tables. Teams and Players, they are connected by a one-to-many relationship due to the fact that each of the players can only be assigned to one team.
+
+This relationship allows users to easily view each team and the players contained within. Allowing for easy management.
+
+The highlighted section in the diagram shows the original plan for the "Matches" table, this would be used to allow the aformentioned functionality to compare the skill levels of teams. Due to the time constraints these were not deemed feasable for the current build.   
+This also applies to the highlighted "Overall skill" attribute as this was at the core of the "Matches" concept
+
+
+
+## Development
+
+## Footer
