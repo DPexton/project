@@ -60,6 +60,8 @@ I used this as it is a familiar and easy to use application which makes for clea
 
 ![](https://i.imgur.com/NbUXol2.png)
 
+As you can see on the board, each of the projects user stories were categorized. Green were high priority, yellow were non-essential however within scope, Red was stories that were likely out of scope however potentially feasable in a future build.      
+   
 Here is a link to the [Full Board](https://qalearning-my.sharepoint.com/:i:/r/personal/dpexton_qa_com/Documents/Project%20Tracking.png?csf=1&web=1&e=gU2AEA)
 
 ### Entity Relationship Diagram
@@ -106,4 +108,63 @@ pip3 install pytest pytest-cov
 python3 -m pytest --cov=application
 ```
 
+## Front End
+
+### Home Page
+
+Below you will see the front page of my application. This is navigared to using /home or an unspecified path.    
+
+From here we can see the currently available options which initially are simply to refresh the home page or to add a team.
+
+This navigation bar is contained in a layout template. making it available on every page.
+
+![](https://imgur.com/0GKzf4t)
+
+### Create a Team
+This is the screen we see when we select the "Add Team" option.   
+As you can see we can enter the name of the team and the teams home City.   
+When a team is created a timestamp is also saved to represent the date that the team was created.
+
+![](https://imgur.com/6ZxnQnU)
+
+Once the team is created we see an updated homepage which shows the options available for this team, to add a player, update or delete the team.
+
+![](https://imgur.com/AVTqKPA
+)
+### Create a Player
+On this screen we are able to add a player. By selecting the Create player option next to the desired team. This ensures that this new player will be assigned to the selected team.   
+
+Here we can add player details such as Name, Position and skill level.
+
+![](https://imgur.com/YY8zwPc)
+
+Once submitted this player will be added to the selected team and the user will be redirected to the homepage where the player will now be displayed underneath their respective team as shown below.
+
+![](https://imgur.com/tI2nhf9)
+
+### Update a Team
+
+By selecting the Update team option next to each team, we can change the team name and home city.
+
+![](https://imgur.com/AvrJn6g)
+
+Once the details are entered and the Update Team button is clicked, the changes are submitted and the user is redirected to the homepage.    
+The final home page is displayed below.   
+
+![](https://imgur.com/YbVeYOG) 
+
 ## Footer
+
+### Future Improvements
+
+* As mentioned in my Introduction, in a future build I would look to implement an "overall skill" attribute into the Teams table. This would take an average of the skill of each player and output overall skill for the team.   
+* A third table called "Matches" would ideally be implemented into a future build containing a function that would take the overall skill of two selected teams and output a winner based on skill.   
+This would allow for easy comparisons if the database reached a larger number of teams.
+
+### Author
+Dafydd Pexton
+
+### Acknowledgements
+
+Harry Volker   
+Oliver Nichols
