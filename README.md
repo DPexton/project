@@ -47,7 +47,7 @@ I also looked into some other features for the application. This included the ab
 
 My Risk assessment is shown below:
 
-![](https://imgur.com/U8lSauw)
+![](https://imgur.com/U8lSauw.png)
 
 The highlighted row represents a risk that only crossed my path after facing my own technical issues and thus required updating the risk assessment.
 
@@ -66,7 +66,7 @@ Here is a link to the [Full Board](https://qalearning-my.sharepoint.com/:i:/r/pe
 
 ### Entity Relationship Diagram
 
-![](https://imgur.com/4BmcEpA)
+![](https://imgur.com/4BmcEpA.png)
 
 As you can see for the diagram we have two tables. Teams and Players, they are connected by a one-to-many relationship due to the fact that each of the players can only be assigned to one team.
 
@@ -75,13 +75,18 @@ This relationship allows users to easily view each team and the players containe
 The highlighted section in the diagram shows the original plan for the "Matches" table, this would be used to allow the aformentioned functionality to compare the skill levels of teams. Due to the time constraints these were not deemed feasable for the current build.   
 This also applies to the highlighted "Overall skill" attribute as this was at the core of the "Matches" concept
 
+### Continuous Integration
 
+![](https://imgur.com/4BmcEpA.png)
+
+I have used continuous integration in my project to provide a clear and simple development process from planning to deployment.   
+As you can see this involved steps such as using GitHub for storing and updating code. Jenkins was largely used to build automate the process and also complete unit testing and output easy to read results for the user.
 
 ## Testing
 
 I used PyTest in order to run unit tests which will test each function in the apoplication to ensure that the output is correct each time. Below I have included a screenshot of the coverage report provided by Jenkins:
 
-![](https://imgur.com/a/d9HhXup)
+![](https://imgur.com/bEaPtRp.png)
 
 As you can see the application has achieved 100% coverage through unit testing
 
@@ -118,40 +123,40 @@ From here we can see the currently available options which initially are simply 
 
 This navigation bar is contained in a layout template. making it available on every page.
 
-![](https://imgur.com/0GKzf4t)
+![](https://imgur.com/0GKzf4t.png)
 
 ### Create a Team
 This is the screen we see when we select the "Add Team" option.   
 As you can see we can enter the name of the team and the teams home City.   
 When a team is created a timestamp is also saved to represent the date that the team was created.
 
-![](https://imgur.com/6ZxnQnU)
+![](https://imgur.com/6ZxnQnU.png)
 
 Once the team is created we see an updated homepage which shows the options available for this team, to add a player, update or delete the team.
 
-![](https://imgur.com/AVTqKPA
-)
+![](https://imgur.com/AVTqKPA.png)
+
 ### Create a Player
 On this screen we are able to add a player. By selecting the Create player option next to the desired team. This ensures that this new player will be assigned to the selected team.   
 
 Here we can add player details such as Name, Position and skill level.
 
-![](https://imgur.com/YY8zwPc)
+![](https://imgur.com/YY8zwPc.png)
 
 Once submitted this player will be added to the selected team and the user will be redirected to the homepage where the player will now be displayed underneath their respective team as shown below.
 
-![](https://imgur.com/tI2nhf9)
+![](https://imgur.com/tI2nhf9.png)
 
 ### Update a Team
 
 By selecting the Update team option next to each team, we can change the team name and home city.
 
-![](https://imgur.com/AvrJn6g)
+![](https://imgur.com/AvrJn6g.png)
 
 Once the details are entered and the Update Team button is clicked, the changes are submitted and the user is redirected to the homepage.    
 The final home page is displayed below.   
 
-![](https://imgur.com/YbVeYOG) 
+![](https://imgur.com/YbVeYOG.png) 
 
 ## Footer
 
