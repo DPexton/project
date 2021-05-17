@@ -1,9 +1,5 @@
 # README - Project 
 
-## Contents
-
-## Brief
-
 ## Introduction
 
 ### The Brief
