@@ -69,7 +69,7 @@ As you can see for the diagram we have two tables. Teams and Players, they are c
 This relationship allows users to easily view each team and the players contained within. Allowing for easy management.
 
 The highlighted section in the diagram shows the original plan for the "Matches" table, this would be used to allow the aformentioned functionality to compare the skill levels of teams. Due to the time constraints these were not deemed feasable for the current build.   
-This also applies to the highlighted "Overall skill" attribute as this was at the core of the "Matches" concept
+This also applies to the highlighted "Overall skill" attribute as this was at the core of the "Matches" concept.
 
 ### Continuous Integration
 
