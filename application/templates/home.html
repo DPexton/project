@@ -4,14 +4,12 @@
 {% for team in all_teams %}
         <br>
        
-       
-        {{ team.id }}
+
         {{ team.team_name }}
         {{ team.city }}
         {{ team.date_formed }}
         <br>
         {% for player in team.players %}
-                {{ player.id }}
                 {{ player.player_name }}
                 {{ player.position }}
                 {{ player.skill }}

@@ -75,6 +75,35 @@ This also applies to the highlighted "Overall skill" attribute as this was at th
 
 
 
-## Development
+## Testing
+
+I used PyTest in order to run unit tests which will test each function in the apoplication to ensure that the output is correct each time. Below I have included a screenshot of the coverage report provided by Jenkins:
+
+![](https://imgur.com/a/d9HhXup)
+
+As you can see the application has achieved 100% coverage through unit testing
+
+The Jenkins script for my unit tests contains several steps:
+
+* 1 - Installing the virtual environment   
+```
+python3 -m venv venv   
+source venv/bin/activate
+```
+
+* 2 - Installing all the required modules for the application   
+```
+pip3 install -r requirements.txt
+```
+
+* 3 Installing PyTest
+```
+pip3 install pytest pytest-cov
+```
+
+* 4 - Running the unit tests
+```
+python3 -m pytest --cov=application
+```
 
 ## Footer
