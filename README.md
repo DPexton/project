@@ -76,7 +76,7 @@ This also applies to the highlighted "Overall skill" attribute as this was at th
 ![](https://imgur.com/4BmcEpA.png)
 
 I have used continuous integration in my project to provide a clear and simple development process from planning to deployment.   
-As you can see this involved steps such as using GitHub for storing and updating code. Jenkins was largely used to build automate the process and also complete unit testing and output easy to read results for the user.
+As you can see this involved steps such as using GitHub for storing and updating code. Jenkins was largely used to build automate the process and also complete unit testing and output easy to read results for the user. I also employed the use of a webhook to automate the process of updating from GitHub to Jenkins.
 
 ## Testing
 
